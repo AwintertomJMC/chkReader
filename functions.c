@@ -15,10 +15,10 @@
 char targetFilePath[FILENAMELENGTH*2];
 char renameFilePath[FILENAMELENGTH*2];
 int checkFileHeadHex(byte toBeCheckedFileHeadInfoBuffer[], unsigned int listIndex);
-bool isSuffixChr(char *suffixString);
+bool isSuffixChk(char *suffixString);
 
 void handleFileTypeCheck(FILE *checkFile, char *directoryName, char *fileName) {
-    if (!isSuffixChr(fileName)) {
+    if (!isSuffixChk(fileName)) {
         printf("file %s is not .chk file.%s\n", fileName, SKIPPED);
         return;
     }
@@ -78,7 +78,7 @@ int checkFileHeadHex(byte toBeCheckedFileHeadInfoBuffer[], unsigned int listInde
  * @param fileName
  * @return 返回值为1说明符合，否则不符合
  */
-bool isSuffixChr(char *fileName) {
+bool isSuffixChk(char *fileName) {
     if(fileName == NULL) {
         return 0;
     }
